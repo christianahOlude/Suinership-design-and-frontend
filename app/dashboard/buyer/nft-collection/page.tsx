@@ -257,11 +257,11 @@ export default function NFTCollectionPage() {
                         <Card key={nft.id} className="hover:shadow-lg transition-shadow">
                           <div className="relative">
                             <img
-                              src={nft.nftImage || "/placeholder.svg?height=200&width=300&query=NFT property fraction"}
+                              src={"/house nft 3.png"}
                               alt={`${nft.propertyName} NFT`}
                               className="w-full h-48 object-cover rounded-t-lg"
                             />
-                            <div className="absolute top-4 left-4">{getStatusBadge(nft.status)}</div>
+                            {/*<div className="absolute top-4 left-4">{getStatusBadge(nft.status)}</div>*/}
                             <div className="absolute top-4 right-4">
                               <Badge variant="secondary" className="bg-primary text-primary-foreground">
                                 {nft.fractionOwned}%

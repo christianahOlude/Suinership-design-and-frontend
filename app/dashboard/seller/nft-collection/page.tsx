@@ -262,7 +262,7 @@ export default function SellerNFTCollectionPage() {
                           alt={`${nft.propertyName} NFT`}
                           className="w-full h-48 object-cover rounded-t-lg"
                         />
-                        <div className="absolute top-4 left-4">{getStatusBadge(nft.status)}</div>
+                        {/*<div className="absolute top-4 left-4">{getStatusBadge(nft.status)}</div>*/}
                         <div className="absolute top-4 right-4">
                           <Badge variant="secondary" className="bg-primary text-primary-foreground">
                             {nft.soldFractions}% Sold

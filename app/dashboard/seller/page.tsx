@@ -33,8 +33,6 @@ import {
 export default function SellerDashboard() {
   const [activeTab, setActiveTab] = useState("overview")
   const [showListingForm, setShowListingForm] = useState(false)
-     // const [showListingForm, setShowListingForm] = useState(false)
-    const [showSuccessCard, setShowSuccessCard] = useState(false)
 
   const sellerData = {
     totalListings: 12,
@@ -201,33 +199,10 @@ export default function SellerDashboard() {
                 <TabsTrigger value="analytics">Analytics</TabsTrigger>
                 <TabsTrigger value="documents">Documents</TabsTrigger>
               </TabsList>
-              <Button
-                onClick={() => {
-                  setShowListingForm(false)
-                  // Optionally, trigger a success state here
-                  setShowSuccessCard(true)
-                }}
-              >
-                Submit for Review
+              <Button onClick={() => setShowListingForm(true)} className="flex items-center">
+                <Plus className="h-4 w-4 mr-2" />
+                List New Property
               </Button>
-               {showSuccessCard && (
-                <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-                  <Card className="w-full max-w-md text-center">
-                    <CardHeader>
-                      <CheckCircle className="mx-auto h-12 w-12 text-success mb-4" />
-                      <CardTitle>Property Listed Successfully!</CardTitle>
-                      <CardDescription>
-                        Your property has been submitted for review. You will be notified once it is approved.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <Button className="mt-4" onClick={() => setShowSuccessCard(false)}>
-                        Close
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </div>
-              )}
             </div>
 
 
@@ -593,9 +568,32 @@ export default function SellerDashboard() {
                 <div className="flex items-center justify-end space-x-4 p-6 border-t border-border">
                   <Button variant="outline" onClick={() => setShowListingForm(false)}>
                     Cancel
+                  </Button><Button
+                    onClick={() => {
+                      setShowListingForm(false)
+                      setTimeout(() => {
+                        const toast = document.createElement("div")
+                        toast.innerHTML = `
+                          <div style="position:fixed;top:32px;right:32px;z-index:9999;">
+                            <div style="background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);padding:24px 32px;min-width:320px;display:flex;align-items:center;gap:16px;">
+                              <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#22c55e"/><path d="M8 12.5l2.5 2.5 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                              <div>
+                                <div style="font-weight:600;font-size:1.1rem;">Success</div>
+                                <div style="color:#64748b;">Property submitted for review successfully!</div>
+                              </div>
+                            </div>
+                          </div>
+                        `
+                        document.body.appendChild(toast)
+                        setTimeout(() => {
+                          document.body.removeChild(toast)
+                        }, 3000)
+                      }, 300)
+                    }}
+                  >
+                    Submit for Review
                   </Button>
-                  <Button>Submit for Review</Button>
-                </div>
+                  </div>
               </Card>
             </div>
           )}
