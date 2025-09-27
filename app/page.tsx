@@ -9,7 +9,7 @@ import { StatusBadge } from "@/components/ui/status-badge"
 import { AIChatbot } from "@/components/ui/ai-chatbot"
 import { UserMenu } from "@/components/ui/user-menu"
 import { useAuth } from "@/components/auth/auth-provider"
-import { ArrowRight, Home, TrendingUp, Users, MapPin, DollarSign } from "lucide-react"
+import { ArrowRight, Home, TrendingUp, Users, MapPin } from "lucide-react"
 import { type Language, getTranslation } from "@/lib/i18n"
 import Link from "next/link"
 import Image from "next/image"
@@ -156,7 +156,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* How It Works Section */}
+
       <section className="py-20 bg-card/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -214,7 +214,6 @@ export default function LandingPage() {
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center text-foreground font-semibold">
-                        <DollarSign className="h-4 w-4 mr-1" />
                         {property.price}
                       </div>
                       <div className="text-sm text-accent font-medium">{property.fractionalAvailability}</div>
