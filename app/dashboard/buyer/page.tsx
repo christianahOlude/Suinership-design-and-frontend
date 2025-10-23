@@ -25,7 +25,7 @@ export default function BuyerDashboard() {
     totalValue: 2450000,
     totalInvested: 2000000,
     totalReturn: 450000,
-    returnPercentage: 22.5,
+    returnPercentage: 22.0,
     propertiesOwned: 8,
     monthlyDividends: 45000,
   }

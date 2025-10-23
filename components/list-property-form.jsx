@@ -48,7 +48,7 @@ export default function ListPropertyForm({ onSubmit, onCancel }: ListPropertyFor
 
   const [dragActive, setDragActive] = useState<'images' | 'documents' | null>(null)
 
-  const handleInputChange = (field: keyof PropertyFormData, value: string) => {
+  const handleInputChange = (field: keyof, PropertyFormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
   }
 
