@@ -118,8 +118,8 @@ export default function ListPropertyForm({ onSubmit, onCancel }: ListPropertyFor
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8">
-          {/* Property Information */}
-          {/* ... (rest of the form as in your provided code) ... */}
+           Property Information
+           ... (rest of the form as in your provided code) ...
         </form>
       </div>
     </div>
