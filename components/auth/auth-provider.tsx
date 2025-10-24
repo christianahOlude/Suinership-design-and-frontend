@@ -7,7 +7,7 @@ const AuthContext = createContext<
   AuthState & {
     signIn: (role?: "buyer" | "seller") => Promise<void>
     signInAdmin: (credentials: { email: string; password: string }) => Promise<void>
-    signInWithZkLogin: (email: string, role: "buyer" | "seller") => Promise<void> // Added zkLogin method
+    signInWithZkLogin: (email: string, role: "buyer" | "seller") => Promise<void>
     signOut: () => Promise<void>
   }
 >({
@@ -16,7 +16,7 @@ const AuthContext = createContext<
   isAuthenticated: false,
   signIn: async () => {},
   signInAdmin: async () => {},
-  signInWithZkLogin: async () => {}, // Added to context
+  signInWithZkLogin: async () => {},
   signOut: async () => {},
 })
 

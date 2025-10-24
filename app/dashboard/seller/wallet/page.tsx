@@ -57,7 +57,7 @@ export default function SellerWalletPage() {
       currency: "USDC",
       status: "completed" as const,
       date: "2024-12-13T09:15:00Z",
-      description: "Naira to USDC conversion via Flutterwave",
+      description: "Naira to USDC conversion via Flutter wave",
       reference: "FLW_TXN_001234567890",
     },
   ]
@@ -235,7 +235,7 @@ export default function SellerWalletPage() {
               <Card>
                 <CardHeader>
                   <CardTitle>Deposit Funds</CardTitle>
-                  <CardDescription>Convert Naira to USDC using Flutterwave payment gateway</CardDescription>
+                  <CardDescription>Convert Naira to USDC using Flutter wave payment gateway</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="space-y-4">
